@@ -4,7 +4,7 @@
   Plugin Name: Nastříkej
   Plugin URI: http://www.nastrikej.cz
   Description: Rozpis hasičských soutěží/výsledků z celé ČR
-  Version: 0.1
+  Version: 0.2
   Author: vEnCa-X
   Author URI: http://www.venca-x.cz
   License: MIT
@@ -95,7 +95,7 @@ class Nastrikej extends WP_Widget
                     foreach ( $data["competitions"] as $competition )
                     {
                         $table.="<tr>";
-                            $table.="<td>" . $competition["date"] . "&nbsp;</td><td><a href='" . $competition["href"] . "'>" . $competition["village"] . "</a></td>";
+                            $table.="<td class='competition'>" . $competition["date"] . "&nbsp;</td><td class='competition-village'><a href='" . $competition["href"] . "'>" . $competition["village"] . "</a></td>";
                         $table.="</tr>";
                         
                         if( count( $competition["results"] ) > 0 )
@@ -105,11 +105,11 @@ class Nastrikej extends WP_Widget
                                 $video = "";
                                 foreach( $result["youtubes"] as $youtube )
                                 {
-                                    $video.= " <a href='" . $youtube . "' target='_blank'><img src='http://www.nastrikej.cz/pictures/video-icon.png' alt='video'></a> ";
+                                    $video.= " <a href='" . $youtube . "' target='_blank' class='competition-video'><img src='http://www.nastrikej.cz/pictures/video-icon.png' alt='video'></a> ";
                                 }
                                 
                                 $table.="<tr>";
-                                    $table.="<td colspan=\"2\"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$result["position"]}. {$result["team"]}, čas: {$result["time"]}</small>".$video."</td>";
+                                    $table.="<td colspan=\"2\" class='competition-result'><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$result["position"]}. {$result["team"]}, čas: {$result["time"]}</small>".$video."</td>";
                                     //,{$result["position"]}.místo";
                                 $table.="</tr>";                            
                             }
@@ -125,15 +125,6 @@ class Nastrikej extends WP_Widget
 
 }
 
-//na tomhle to kasovi nejspis pada, pac ma stary PHP - http://codex.wordpress.org/Widgets_API
-/*
-add_action( 'widgets_init', function()
-{
-    register_widget( 'nastrikej' );
-} );
-*/
-
-//todo kvuli kasovi
 add_action('widgets_init', create_function('', 'return register_widget("nastrikej");'));
 
 ?>

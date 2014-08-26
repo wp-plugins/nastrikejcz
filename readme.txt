@@ -20,6 +20,22 @@ Plugin pro zobrazení hasičských soutěží. V pluginu je možnost zobrazovat 
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
+
+== Example formating CSS ==
+/****************** start nastrikej ***************/
+table#nastrikej, table#nastrikej td {
+  border: 0px;
+}
+
+table#nastrikej th {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  padding: 3px;
+}
+/****************** end nastrikej ***************/
+
+
 == Frequently asked questions ==
 
 = A question that someone might have =
