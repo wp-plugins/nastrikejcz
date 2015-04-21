@@ -1,9 +1,9 @@
-=== nastrikejcz ===
+﻿=== nastrikejcz ===
 Contributors: vEnCa-X
 Donate link: http://www.nastrikej.cz
 Tags: nastrikej, hasičská soutěž, výsledky, videa
 Requires at least: 3.3
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: /trunk/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
